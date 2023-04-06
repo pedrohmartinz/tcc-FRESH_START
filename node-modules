@@ -1,0 +1,13 @@
+npm install styled-components
+npm install @react-navigation/native
+npm install react-native-reanimated react-native-gesture-handler react-native-native-screens react-native-safe-area-context @react-native-community/masked-view
+npm install @react-navigation/stack
+npm install @react-navigation/bottom-tabs
+npm install @reactive-native-community/async-storage
+npm install @reactive-native-community/geolocation
+npm install reactive-native-permissions
+npm install reactive-native-swiper
+npm install reactive-native-svg
+npm install reactive-native-svg-transformer
+
+
