@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import { Text } from 'react-native';
+import { Image } from 'react-native';
 import {Container, LoadingIcon} from './styles';
-import AsyncStorage from  '@react-native-community/async-storage';
+import {AsyncStorage} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Logo from '../../assets/camaleao.png'
+//import Logo from '../../assets/camaleao.png'
 
 export default () => {
 
@@ -29,7 +29,7 @@ export default () => {
 
     return (
         <Container>
-                <Logo width="100%" height="160" />
+            
                 <LoadingIcon size="large" color="#11CED48A"  />
         </Container>
     );

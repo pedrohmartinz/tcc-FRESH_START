@@ -7,6 +7,6 @@ export const Container = styled.SafeAreaView`
     justify-content:center;
     align-items: center;
 `;
-export const LoadingIcon = styled.Acitivityindicatpr`
+export const LoadingIcon = styled.AcitivityIndicator`
     margin-top: 50px;
 `;
