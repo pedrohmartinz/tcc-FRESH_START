@@ -3,8 +3,12 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import UserContextProvider from './src/contexts/UserContext';
 import MainStack from "./src/stacks/MainStack";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
+
+  
   return (
     <UserContextProvider>
     <NavigationContainer>
