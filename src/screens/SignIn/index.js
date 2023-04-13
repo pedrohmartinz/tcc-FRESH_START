@@ -12,13 +12,15 @@ import SignInput from '../../components/SignInput';
 export default () => {
     return (
         <Container>
-          
+        
         
         <InputArea>
-                <SignInput  placeholder="Digite seu e-mail"  />
 
-                <SignInput  placeholder="Digite sua senha" />
-
+        
+        <Image
+            style={{height:315, width:'84%'}}
+            source={require('./camaleao.png')}
+        />
 
             <CustomButton>
                     <CustombuttonText>LOGIN</CustombuttonText>
