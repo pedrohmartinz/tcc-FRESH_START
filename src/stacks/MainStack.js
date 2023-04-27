@@ -11,7 +11,7 @@ import SignUp4 from '../screens/SignUp4';
 const Stack = createStackNavigator();
 
 export default () => (
-    <Stack.Navigator initialRouteName="SignUp"  screenOptions={{headerShown: false}}>
+    <Stack.Navigator initialRouteName="SignUp3"  screenOptions={{headerShown: false}}>
         <Stack.Screen name="Preload" component={Preload} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />

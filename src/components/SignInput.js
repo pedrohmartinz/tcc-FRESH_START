@@ -1,32 +1,46 @@
-import React from "react";
-import styled from "styled-components/native";
+import React from 'react';
+import styled from 'styled-components/native';
 
 const InputArea = styled.View`
-    width: 100%;
-    height: 60px;
-    background-color:#FCFCFC;
+     width:90%;
+    height:50px;
+    background-color: #FCFCFC;
     flex-direction:row;
-    border-radius:30px;
-    padding-left:15px;
+    
+border-radius:20px;
     align-items:center;
-    margin-bottom:15px;
+    margin-bottom:40px;
+    margin-top:10px;
+    margin-left:10px;
+    border-color: '#000000';
+    border-width: 1px;
+
 `;
 
 const Input = styled.TextInput`
     flex:1;
     font-size:16px;
-    color: #11CED4;
-    margin-left:10px;
-
+    color:black;
+    padding-left:15px;
+    
 `;
 
-
-export default ({IconSvg,placeholder}) =>{
-    return(
+export default ({ placeholder, value, onChangeText, password, keyboardType }) => {
+    return (
         <InputArea>
-            <IconSvg width="24" height="24" fill="#7EE5E8"/>
-            <Input placeholder={placeholder} placeholderTextColor="#7EE5E8"/>
+            
+            <Input
+                placeholder={placeholder}
+                placeholderTextColor="black"
+                value={value}
+                onChangeText={onChangeText}
+                secureTextEntry={password}
+                keyboardType={keyboardType}
+
+            />
         </InputArea>
-    );
+        
+        );
 
 }
+

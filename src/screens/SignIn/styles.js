@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 export const Container = styled.SafeAreaView`
     background-color: #FFFFFF;
     flex:1;
-    justify-content; center;
+    justify-content: center;
     align-items:center;
 
 `;
@@ -21,6 +21,9 @@ export const CustomButton= styled.TouchableOpacity`
     border-radius:30px;
     justify-content:center;
     align-items:center;
+    width:85%;
+    margin-left:30px;
+    
 `;
 export const CustombuttonText= styled.Text`
     font-size:18px;

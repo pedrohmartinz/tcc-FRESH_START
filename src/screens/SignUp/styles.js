@@ -7,7 +7,6 @@ export const Container = styled.SafeAreaView`
     justify-content: center;
     alignItems:center;
     text-align:center;
-
 `;
 
 export const InputArea= styled.View`
@@ -21,7 +20,7 @@ export const CustomButton= styled.TouchableOpacity`
     border-radius:30px;
     justify-content:center;
     align-items:center;
-    margin-top:180px;
+    margin-top:320px;
     margin-left:80px;
     margin-right:80px;
 `;

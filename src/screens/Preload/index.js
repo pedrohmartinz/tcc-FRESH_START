@@ -1,23 +1,25 @@
 import React, {useEffect} from 'react';
 import { Image } from 'react-native';
 import {Container, LoadingIcon} from './styles';
-import {AsyncStorage} from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { Navigate } from 'react-router-dom';
 
 export default () => {
     
     const navigation = useNavigation();
-
+    
+               
     useEffect(() =>{
         const checkToken = async () =>{
             const token = await AsyncStorage.getItem('token');
             if(token!==null){
                 //validar o token
-                navigation.navigate('SignIn');
+               
                
                 
             }else{
-                navigation.navigate('SignUp');
+                navigation.navigate('SignIn');
                
 
             }
