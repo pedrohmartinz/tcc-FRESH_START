@@ -7,7 +7,8 @@ import { UserContext } from '../../contexts/UserContext';
 //import Logo from '../../assets/camaleao.png';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
-
+import Api from '../../Api';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 
@@ -24,8 +25,29 @@ export default () => {
         });
 
     }
-    const handleSignClick = () =>{
+    const handleSignClick = async () =>{
+        if(emailField != '' && passwordField !=''){
+            let json = await Api.signIn(emailField, passwordField);
+            if(json.token){
+                await AsyncStorage.setItem('token', json.token);
+                userDispatch({
+                    type:'setAvatar',
+                    payload:{
+                        avatar:json.data.avatar
+                    }
+                });
+               
+                navigation.reset({
+                    routes:[{name:'MainTab'}]
+                });
 
+            }else{
+                alert("E-mail e/ou senha incorretos!")
+            }
+
+        } else{
+            alert("Preencha os campos!")
+        }
         
     }
 

@@ -8,6 +8,7 @@ import Checkbox from 'expo-checkbox';
 //import Logo from '../../assets/camaleao.png';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 

@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 //import Logo from '../../assets/camaleao.png';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
-
+import Api from '../../Api';
 
 
 
@@ -22,9 +22,33 @@ export default () => {
     const [telefoneField, setTelefoneField] = useState('');
 
     
-    const handleSignClick = () =>{
+    const handleSignClick = async () =>{
+            if(nameField !='' && emailField !='' && telefoneField !='' && cpfField !='' && passwordField !='' ){
+                let res = await Api.signUp(nameField, emailField, passwordField)
+                if(res.token){
+                    await AsyncStorage.setItem('token', res.token);
+                    userDispatch({
+                        type:'setAvatar',
+                        payload:{
+                            avatar:res.data.avatar
+                        }
+                    });
+                   
+                    navigation.reset({
+                        routes:[{name:'MainTab'}]
+                    });
+    
+                }else{
+                    alert("Erro: "+res.error)
+                }
+
+            }else{
+                alert("Preencha os campos!")
+            }
+
+
             navigation.navigate('SignUp3')
-        
+                    
     }
 
 
