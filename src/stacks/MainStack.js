@@ -6,18 +6,21 @@ import SignUp from '../screens/SignUp';
 import SignUp2 from '../screens/SignUp2';
 import SignUp3 from '../screens/SignUp3';
 import SignUp4 from '../screens/SignUp4';
+import MainTab from './MainTab';
 
 
 const Stack = createStackNavigator();
 
 export default () => (
-    <Stack.Navigator initialRouteName="SignUp3"  screenOptions={{headerShown: false}}>
+    <Stack.Navigator initialRouteName="Preload"  screenOptions={{headerShown: false}}>
         <Stack.Screen name="Preload" component={Preload} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="SignUp2" component={SignUp2} />
         <Stack.Screen name="SignUp3" component={SignUp3} />
         <Stack.Screen name="SignUp4" component={SignUp4} />
+        <Stack.Screen name="MainTab" component={MainTab} />
+
 
     </Stack.Navigator>
 
