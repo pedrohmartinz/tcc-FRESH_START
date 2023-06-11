@@ -1,10 +1,11 @@
 import React from 'react';
 import { Text,ImageBackground } from 'react-native';
 import {Container, InputArea, CustomButton, CustombuttonText} from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default () => {
-
+    const navigation = useNavigation();
     const handleNavigation = () =>{
         navigation.reset({
             routes:[{name:'SignUp2'}]

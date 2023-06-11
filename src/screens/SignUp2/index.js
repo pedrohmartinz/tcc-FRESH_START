@@ -17,7 +17,7 @@ export default () => {
     const { state: user } = useContext(UserContext);
     const [emailField, setEmailField] = useState('');
     const [passwordField, setPasswordField] = useState('');
-    const [nameField, setField] = useState('');
+    const [nameField, setNameField] = useState('');
     const [cpfField, setCpfField] = useState('');
     const [telefoneField, setTelefoneField] = useState('');
 

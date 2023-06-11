@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import {Container,InputArea,CustomButton,CustombuttonText, SignMessageButton, SignmessageButtonText,SignmessageButtonTextBold } from './styles';
 import SignInput from '../../components/SignInput';
 import { UserContext } from '../../contexts/UserContext';
-import Checkbox from 'expo-checkbox';
+import {Checkbox} from 'expo-checkbox';
 //import Logo from '../../assets/camaleao.png';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 

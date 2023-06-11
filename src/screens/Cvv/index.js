@@ -1,12 +1,20 @@
 import React from "react";
-import {Text} from 'react-native';
+import {Text,ImageBackground} from 'react-native';
 import {Container} from './styles.js';
 
 
 export default () => {
     return (
         <Container>
-                <Text>Cvv</Text>
+                  <ImageBackground
+                style={{height:'100%', width:'100%'}}
+                source={require('../Home/background1.png')}
+            >
+
+
+
+
+            </ImageBackground>
         </Container>
     );
 }
