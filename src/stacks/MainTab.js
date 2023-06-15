@@ -12,7 +12,7 @@ import Profile from "../screens/Profile";
 const Tab = createBottomTabNavigator();
 
 export default () =>(
-    <Tab.Navigator screenOptions={{headerShown: false}} tabBar={props=><CustomTabBar  {...props}/>} >
+    <Tab.Navigator initialRouteName="Home"   screenOptions={{headerShown: false}} tabBar={props=><CustomTabBar  {...props}/>  } >
         
         <Tab.Screen name="Infs" component={Infs} />
         <Tab.Screen name="Diary" component={Diary} />
