@@ -10,7 +10,7 @@ export const MyHeader = styled.SafeAreaView`
     border-bottom-right-radius: 27px;
 `;
 export const MidBox = styled.SafeAreaView`
-    height:110px;
+    height:130px;
     background-color: white;
     border-radius: 13px;
     width:200px;
@@ -18,6 +18,16 @@ export const MidBox = styled.SafeAreaView`
     justify-content:center;
     margin-left:25%;
     margin-top:40px;
+`;
+export const DownBox = styled.SafeAreaView`
+    height:128px;
+    background-color: white;
+    border-radius: 13px;
+    width:312px;
+    text-align:center;
+    justify-content:center;
+    margin-left:10%;
+    margin-top:10px;
 `;
 export const Linha = styled.SafeAreaView`
     justifyContent: space-between;
