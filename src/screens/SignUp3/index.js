@@ -9,9 +9,7 @@ import {Checkbox} from 'expo-checkbox';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
-
+import database from "../../config/firebaseconfig"
 
 export default () => {
     const { dispatch: userDispatch } = useContext(UserContext);
@@ -25,6 +23,13 @@ export default () => {
     const [isSelected, setSelection] = useState(false);
     
     const handleSignClick = () =>{
+          database.collection("Usuario").add({
+            cpf:cpfField,
+            email:emailField,
+            name:nameField,
+            password:passwordField,
+            phone:telefoneField
+          })
             navigation.navigate('SignUp3')
         
     }
