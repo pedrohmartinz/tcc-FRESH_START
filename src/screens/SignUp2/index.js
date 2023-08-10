@@ -8,8 +8,8 @@ import { UserContext } from '../../contexts/UserContext';
 //import IconEmail from '../../assets/cadeado.png';
 //import IconSenha from '../../assets/cadeado.png';
 import Api from '../../Api';
-
-
+import database from "../../config/firebaseconfig"
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default () => {
     const { dispatch: userDispatch } = useContext(UserContext);
@@ -34,6 +34,15 @@ export default () => {
                         }
                     });
                    
+
+                    database.collection("Usuario").add({
+                        cpf:cpfField,
+                        email:emailField,
+                        name:nameField,
+                        password:passwordField,
+                        phone:telefoneField
+                      })
+
                     navigation.reset({
                         routes:[{name:'MainTab'}]
                     });

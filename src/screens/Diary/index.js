@@ -1,9 +1,8 @@
 import React from "react";
 import {Text, ImageBackground, TouchableOpacity, StyleSheet, View, Image, ScrollView} from 'react-native';
 import {Container, MyHeader, Pergunta, Pergunta2} from './styles.js';
-import moment from 'moment';
 import { Pressable } from "react-native";
-
+import { useNavigation } from '@react-navigation/native';
 
 export default () => {
     let day = new Date().getDate(); //Para obter o dia
@@ -11,14 +10,28 @@ export default () => {
     let year = new Date().getFullYear(); //Para obter o ano
     const diaSemanaAtual = new Date().getDay();
     var weekdays = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"); 
+    const navigation = useNavigation();
 
     const handleTermos = () =>{
-        console.log("t")
+        navigation.navigate('Q1')
+    }
     
-}
-
-
-
+    const handleQ1 = () =>{
+        navigation.navigate('Q1')
+    }
+    const handleQ2 = () =>{
+        navigation.navigate('Q2')
+    }
+    const handleQ3 = () =>{
+        navigation.navigate('Q3')
+    }
+    const handleQ4 = () =>{
+        navigation.navigate('Q4')
+    }
+    const handleQ5 = () =>{
+        navigation.navigate('Q5')
+    }
+    
     return (
         <ScrollView>
 
@@ -68,16 +81,16 @@ export default () => {
         
         </Pergunta2>
        
-        <Pergunta>
+        <Pergunta onPress={handleQ1} >
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > Se você terminasse sua vida hoje, teria valido tudo a pena? </Text>
         </Pergunta>
-        <Pergunta>
+        <Pergunta onPress={handleQ2}>
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > Se você terminasse sua vida hoje, teria valido tudo a pena? </Text>
         </Pergunta>
-        <Pergunta>
+        <Pergunta onPress={handleQ3}>
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > Se você terminasse sua vida hoje, teria valido tudo a pena? </Text>
         </Pergunta>
-        <Pergunta>
+        <Pergunta onPress={handleQ4}>
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > Se você terminasse sua vida hoje, teria valido tudo a pena? </Text>
         </Pergunta>
 
