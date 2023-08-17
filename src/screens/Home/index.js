@@ -1,11 +1,13 @@
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
 import {ImageBackground,StyleSheet, View,Text, Button, Image, TouchableOpacity} from 'react-native';
 import {Container, MyHeader, MidBox, Linha, DownBox} from './styles.js';
 import {Checkbox} from 'expo-checkbox';
+import { UserContext } from '../../contexts/UserContext';
 
 export default () => {
     const [isSelected, setSelection] = useState(false);
     const [isSelected2, setSelection2] = useState(false);
+    const { state: user } = useContext(UserContext);
     return (
         <Container>
             

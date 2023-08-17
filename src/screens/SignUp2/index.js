@@ -20,7 +20,7 @@ export default () => {
     const [nameField, setNameField] = useState('');
     const [cpfField, setCpfField] = useState('');
     const [telefoneField, setTelefoneField] = useState('');
-
+    user.nome = nameField;
     
     const handleSignClick = async () =>{
             if(nameField !='' && emailField !='' && telefoneField !='' && cpfField !='' && passwordField !='' ){
@@ -42,6 +42,8 @@ export default () => {
                         password:passwordField,
                         phone:telefoneField
                       })
+                      user.name = nameField;
+                      console.log(user.name)
 
                     navigation.reset({
                         routes:[{name:'MainTab'}]
@@ -56,8 +58,6 @@ export default () => {
             }
 
 
-            navigation.navigate('SignUp3')
-                    
     }
 
 

@@ -23,16 +23,11 @@ export default () => {
     const [isSelected, setSelection] = useState(false);
     
     const handleSignClick = () =>{
-         
             navigation.navigate('SignUp3')
-        
     }
     const handleTermos = () =>{
         navigation.navigate('SignUp4')
-    
 }
-
-
     return (
         
 
