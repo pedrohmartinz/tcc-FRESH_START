@@ -1,5 +1,5 @@
 import React, {Fragment, useContext, useState} from "react";
-import {Text, ImageBackground, View, StyleSheet,TextInput, Image, ScrollView,  KeyboardAvoidingView, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Text, ImageBackground, View, StyleSheet,TextInput, Image, ScrollView,  KeyboardAvoidingView, SafeAreaView, TouchableOpacity, Keyboard} from 'react-native';
 import {Container, Comentario, Usuario, Conteudo} from './styles.js';
 import { UserContext } from '../../contexts/UserContext';
 import database from "../../config/firebaseconfig"
@@ -26,7 +26,9 @@ export default () => {
             conteudo:message,
             name:user.name
             })
-        message = "";
+            setMessage('');
+            Keyboard.dismiss()
+        
 }
    
 
@@ -139,6 +141,7 @@ export default () => {
               multiline
               value={message}
               onChangeText={t => setMessage(t)}
+              blurOnSubmit={true}
             />
             <TouchableOpacity
               style={styles.sendButton}
