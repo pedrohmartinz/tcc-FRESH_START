@@ -51,7 +51,7 @@ export default () => {
     var prem4 = "0"
 
     for (var c = 0; c < comp; c++) {
-        if (tupla[c]["dia"] == day && tupla[c]["mes"]==month) {
+        if (tupla[c]["dia"] != day && tupla[c]["mes"]!=month) {
             var prem1 = tupla[c]["mensagem1"];
             var prem2 = tupla[c]["mensagem2"];
             var prem3 = tupla[c]["mensagem3"];

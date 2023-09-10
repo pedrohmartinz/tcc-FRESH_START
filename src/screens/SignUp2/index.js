@@ -21,6 +21,13 @@ export default () => {
     const [cpfField, setCpfField] = useState('');
     const [telefoneField, setTelefoneField] = useState('');
     user.nome = nameField;
+    let day = new Date().getDate(); //Para obter o dia
+    let month = new Date().getMonth() + 1; //Para obter o mês
+    let year = new Date().getFullYear(); //Para obter o ano
+    const today = new Date();
+    var dateShort = today.getFullYear() + '/'
+                    (today.getMonth() +1) + '/'
+                    + today.getDate();
     
     const handleSignClick = async () =>{
             if(nameField !='' && emailField !='' && telefoneField !='' && cpfField !='' && passwordField !='' ){
@@ -40,9 +47,10 @@ export default () => {
                         email:emailField,
                         name:nameField,
                         password:passwordField,
-                        phone:telefoneField
+                        phone:telefoneField,
+                        dataI: dateShort
                       })
-                      user.name = nameField;
+                      user.name = emailField;
                       console.log(user.name)
 
                     navigation.reset({

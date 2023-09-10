@@ -38,17 +38,24 @@ export default () => {
         }
     }
     return (
-        <Container>
-         <ImageBackground
+   
+        <ImageBackground
                 style={{height:'100%', width:'100%'}}
                 source={require('../../Home/background1.png')}
             >
+        <Container>
+                 <ScrollView>
+        
+                <TouchableOpacity style={{marginTop:50, marginBottom:-60, alignItems:"flex-end", marginRight:30 }} ><Text style={{fontSize:18}} >Salvar</Text></TouchableOpacity>
              <MyHeader>
             <Text style={{fontSize:20, marginLeft:5, marginTop:20, textAlign:'left', fontWeight:"bold", textAlign:"center"}} >{prem1} </Text>
             <TextInput  value={message} onChangeText={t => setMessage(t)} multiline placeholder="Escreva aqui como foi seu dia, o que está sentindo, suas vontades..." style={{marginTop:-20, marginLeft:15, marginRight:15, fontSize:20, height:200}} />
         </MyHeader>
        
-       </ImageBackground>
+       
+            
+       </ScrollView>
         </Container>
+        </ImageBackground>
     );
 }
