@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         top: 10,
       },
       sendButton: {
-        backgroundColor: 'white',
+        backgroundColor: '#1EEBB8B0',
         color: 'black',
         height: 40,
         width: 70,
