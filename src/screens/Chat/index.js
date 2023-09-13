@@ -1,8 +1,9 @@
-import React, {Fragment, useContext, useState} from "react";
+import React, {Fragment, useContext, useEffect, useState} from "react";
 import {Text, ImageBackground, View, StyleSheet,TextInput, Image, ScrollView,  KeyboardAvoidingView, SafeAreaView, TouchableOpacity, Keyboard} from 'react-native';
 import {Container, Comentario, Usuario, Conteudo} from './styles.js';
 import { UserContext } from '../../contexts/UserContext';
 import database from "../../config/firebaseconfig"
+import { FlatList } from "react-native-gesture-handler";
 
 export default () => {
     const { state: user } = useContext(UserContext);
@@ -30,7 +31,18 @@ export default () => {
             Keyboard.dismiss()
         
 }
-   
+const [task, setTask] = useState([]); // <—— variável de estado
+useEffect(() => {
+ database.collection("Chat").onSnapshot((query)=>{
+  const list =[];
+  query.forEach((doc)=>{
+    list.push({...doc.data(), id:doc.id})
+  })
+  setTask(list)
+ })
+}, []);
+
+   console.log(task)
 
     return (
         <Fragment>
@@ -42,88 +54,26 @@ export default () => {
                 style={{height:'100%', width:'100%'}}
                 source={require('../Home/background1.png')}
             >
-                    <Text style={{fontSize:30, textAlign:"center", justifyContent:"center", marginTop:30}} >{texto}, {user.name}</Text>
+                    <Text style={{fontSize:30, textAlign:"center", justifyContent:"center", marginTop:30}} >{texto}, {user.email}</Text>
       
-         {/* Comentario1*/}
-            <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-
-            <Comentario>
-                <View style={styles.checkboxContainer}>
-                <Image
-                        style={styles.checkbox}
-                        source={require('../SignUp3/usuario.png')}
-                    />
-                <Text style={styles.label}>Termos e condições</Text>
+                    <View>
+              <FlatList showsVerticalScrollIndicator={false} data={task} 
+                renderItem={({item})=>{
+                  return(
+                    <Comentario>
+                    <View style={styles.checkboxContainer}>
+                    <Image
+                            style={styles.checkbox}
+                            source={require('../SignUp3/usuario.png')}
+                        />
+                <Text style={styles.label}>{item.name}</Text>
                 </View>
-                    <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-                </Comentario>
-                 {/* Comentario3*/}
-            <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-             {/* Comentario4*/}
-             <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-             {/* Comentario5*/}
-             <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-             {/* Comentario6*/}
-             <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-             {/* Comentario7*/}
-             <Comentario>
-            <View style={styles.checkboxContainer}>
-            <Image
-                    style={styles.checkbox}
-                    source={require('../SignUp3/usuario.png')}
-                />
-        <Text style={styles.label}>Termos e condições</Text>
-        </View>
-                <Conteudo> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </Conteudo>      
-            </Comentario>
-            
-
-
+                        <Conteudo> {item.conteudo} </Conteudo>      
+                    </Comentario>
+                  )
+                }}
+              />
+            </View >
             </ImageBackground>
         </Container>
         </ScrollView>

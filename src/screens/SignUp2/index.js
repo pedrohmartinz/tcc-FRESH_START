@@ -51,6 +51,7 @@ export default () => {
                         dataI: dateShort
                       })
                       user.name = emailField;
+                      user.email=nameField;
                       console.log(user.name)
 
                     navigation.reset({
