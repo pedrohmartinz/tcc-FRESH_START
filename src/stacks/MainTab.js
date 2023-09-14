@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import CustomTabBar from "../components/CustomTabBar";
 
 import Home from "../screens/Home";
+import Calendar from "../screens/Home/Calendar";
 import Infs from "../screens/Infs";
 import Diary from "../screens/Diary";
 import Chat from "../screens/Chat";
@@ -30,6 +31,8 @@ export default () =>(
         <Tab.Screen name="Q3" component={Q3} />
         <Tab.Screen name="Q4" component={Q4} />
         <Tab.Screen name="Q5" component={Q5} />
+        <Tab.Screen name="Calendar" component={Calendar} />
+        
 
     </Tab.Navigator>
 

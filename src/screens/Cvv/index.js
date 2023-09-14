@@ -2,6 +2,8 @@ import React from "react";
 import {Text,ImageBackground, Image, View, TouchableOpacity, StyleSheet} from 'react-native';
 import {Container, Comentario, Conteudo} from './styles.js';
 import { ScrollView } from "react-native-gesture-handler";
+import { A } from '@expo/html-elements';
+
 
 
 export default () => {
@@ -31,8 +33,9 @@ export default () => {
                     style={styles.checkbox}
                     source={require('../../components/phone.png')}
                 />
-        <Text style={styles.label}>Pai</Text>
+        <Text style={styles.label}>Undefined</Text>
         <Text style={{marginLeft:10, marginTop:20, fontSize:15}}>(11)11111-1111</Text>
+      
        
         </View>
             
@@ -44,7 +47,7 @@ export default () => {
                     style={styles.checkbox}
                     source={require('../../components/phone.png')}
                 />
-        <Text style={styles.label}>Pai</Text>
+        <Text style={styles.label}>Undefined</Text>
         <Text style={{marginLeft:10, marginTop:20, fontSize:15}}>(11)11111-1111</Text>
        
         </View>

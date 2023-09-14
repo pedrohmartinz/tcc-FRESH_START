@@ -25,7 +25,7 @@ export default () => {
     let month = new Date().getMonth() + 1; //Para obter o mês
     let year = new Date().getFullYear(); //Para obter o ano
     const today = new Date();
-    var dateShort = today.getFullYear() + '/'
+    var dateShort = today.getFullYear() + '/' +
                     (today.getMonth() +1) + '/'
                     + today.getDate();
     

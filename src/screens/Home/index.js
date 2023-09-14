@@ -4,12 +4,14 @@ import {Container, MyHeader, MidBox, Linha, DownBox} from './styles.js';
 import {Checkbox} from 'expo-checkbox';
 import { UserContext } from '../../contexts/UserContext';
 import database from "../../config/firebaseconfig"
+import { useNavigation } from '@react-navigation/native';
 
 export default () => {
     const [isSelected, setSelection] = useState(false);
     const [isSelected2, setSelection2] = useState(false);
     const { state: user } = useContext(UserContext);
-  
+    const navigation = useNavigation();
+   
 
     const [task, setTask] = useState([]);
         useEffect(() => {
@@ -23,12 +25,11 @@ export default () => {
       }, [])
       var tupla = task;
       var comp = task.length;
-     user.name="brunocano@gmail.com"
-  
+    console.log(user.name)
       for (var c = 0; c < comp; c++) {
           if (tupla[c]["email"] == user.name ) {
               var prem1 = tupla[c]["dataI"];
-              console.log("prem1")
+              
           }
       }
       const startDate  = '2020-01-01';
@@ -49,6 +50,9 @@ export default () => {
 
       const diffInMs   = new Date(u) - new Date(prem1)
       const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+      const calendargo = () =>{
+        navigation.navigate('Calendar')
+      }
 
     return (
         <Container>
@@ -69,11 +73,11 @@ export default () => {
                
 
                 <Text style={{fontSize:22, marginTop:-12, textAlign:'center'}} >Estou sóbrio(a) há:</Text>
-                <Text style={{fontSize:56, marginTop:1, textAlign:'center', fontWeight: "bold"}} >{diffInDays} </Text> 
+                <Text style={{fontSize:56, marginTop:1, textAlign:'center', fontWeight: "bold"}} >0 </Text> 
                 <Text style={{fontSize:19, marginTop:-1, textAlign:'center'}} >dias</Text> 
-                <Text style={{fontSize:14, marginTop:-1, marginLeft:18, color:"gray"}} >inicio: 00/00/0000 </Text> 
+                <Text style={{fontSize:14, marginTop:-1, marginLeft:18, color:"gray"}} >inicio: {prem1} </Text> 
 
-                <TouchableOpacity style={{alignItems:'flex-end', marginTop:-70, marginRight:10}} >
+                <TouchableOpacity onPress={calendargo} style={{alignItems:'flex-end', marginTop:-70, marginRight:10}} >
                 <Image
                     style={{height:26, width:26, marginTop:26, marginLeft:'100%'}}
                     source={require('./calendario.png')}

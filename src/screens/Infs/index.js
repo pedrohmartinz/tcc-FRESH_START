@@ -5,6 +5,8 @@ import ExamplePdf from './boleto.pdf';
 import { StatusBar } from 'expo-status-bar';
 import * as FileSystem from 'expo-file-system';
 import { shareAsync } from 'expo-sharing';
+import {WebView} from 'react-native-webview'
+import YoutubePlayer from 'react-native-youtube-iframe';
 
 
 
@@ -69,8 +71,9 @@ export default () => {
        <Text style={{fontSize:32, width:'30%', marginLeft:'39%', marginTop:30}} >Sobre</Text>
         <Text style={{justifyContent:"center", textAlign:"center"}} >Esta é uma tela para aprendizado e autoconhecimento. Aproveite para ler livros, assistir a vídeos interessantes e praticas técnicas de meditação...</Text>
        
-
-       <Text style={{fontSize:32, width:'30%', marginLeft:'39%', marginTop:30}} >Livros</Text>
+        <View style={{backgroundColor:'white', borderRadius:30, marginTop:30}} >
+     
+       <Text style={{fontSize:32, width:'30%', marginLeft:'39%'}} >Livros</Text>
        <View style={{width:'100%', alignItems:"center"}} >
             <TouchableOpacity onPress={downloadFromUrl} >
                 <Text style={{fontStyle:"italic", textDecorationLine:"underline", marginTop:10, fontSize:17}} >- "Beber sem Parar" por Allen Carr</Text>
@@ -87,9 +90,21 @@ export default () => {
                 <Text>Este livro apresenta relatos pessoais de indivíduos que superaram o alcoolismo. Através de histórias inspiradoras e depoimentos, o autor destaca o poder da recuperação e fornece insights sobre como encontrar esperança e apoio na jornada de recuperação.</Text>
             </TouchableOpacity>
             </View>
+            <Text style={{fontSize:15, color:'gray', textDecorationLine:"underline", width:'32%', marginLeft:'44%', marginTop:10}} >ver mais</Text>  
+                        
+        </View>
             <Text style={{fontSize:32, width:'32%', marginLeft:'37%', marginTop:30}} >Vídeos</Text>
-
-        
+            
+            <View style={{marginLeft:20, marginRight:20}} >
+              <YoutubePlayer
+                
+                height={300}
+                play={true}
+                videoId={'84WIaK3bl_s'}
+              />
+            </View>
+            <Text style={{fontSize:15, color:'gray', textDecorationLine:"underline", width:'32%', marginLeft:'44%', marginTop:-115, marginBottom:20}} >ver mais</Text>  
+                    
       
         </ImageBackground>
         </Container>

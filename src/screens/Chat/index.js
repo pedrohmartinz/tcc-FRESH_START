@@ -1,5 +1,5 @@
 import React, {Fragment, useContext, useEffect, useState} from "react";
-import {Text, ImageBackground, View, StyleSheet,TextInput, Image, ScrollView,  KeyboardAvoidingView, SafeAreaView, TouchableOpacity, Keyboard} from 'react-native';
+import {Text, ImageBackground, View, StyleSheet,TextInput, Image, ScrollView, Alert, KeyboardAvoidingView, SafeAreaView, TouchableOpacity, Keyboard} from 'react-native';
 import {Container, Comentario, Usuario, Conteudo} from './styles.js';
 import { UserContext } from '../../contexts/UserContext';
 import database from "../../config/firebaseconfig"
@@ -23,12 +23,29 @@ export default () => {
         var texto="Boa noite"
     }
     const handleSignClick = async () =>{
+
+      if(message == "porra" || message== "caralho" || message == "drogados"){
+        Alert.alert('Ops....', 'O conteúdo da mensagem parece inapropriado, revise o texto.', [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ]);
+        Keyboard.dismiss()
+      }
+      else{
         database.collection("Chat").add({
-            conteudo:message,
-            name:user.name
-            })
-            setMessage('');
-            Keyboard.dismiss()
+          conteudo:message,
+          name:user.name
+          })
+          setMessage('');
+          Keyboard.dismiss()
+      }
+
+
+        
         
 }
 const [task, setTask] = useState([]); // <—— variável de estado

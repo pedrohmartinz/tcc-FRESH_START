@@ -81,27 +81,27 @@ export default () => {
         
 
         <Text style={{fontSize:16, margin:10, color:'#103F18', fontWeight:'bold', width:'36%', marginLeft:'32%'}}  >Perguntas Diárias</Text>
-        <Pergunta2  >
-            <Text style={{fontSize:16, textAlign:'left', margin:10, marginTop:22}} > Como vai o dia hoje? </Text>
+        <Pergunta2 style={{backgroundColor:"#1EEBB8B0"}}  >
+            <Text style={{fontSize:16, textAlign:'left', margin:10,color:'white', marginTop:22}} > Como vai o dia hoje? </Text>
             <View style={styles.checkboxContainer}>
                 <TouchableOpacity onPress={handleTermos}>
              <Image  
                     style={styles.checkbox}
-                    source={require('../../components/phone.png')}
+                    source={require('./feliz.png')}
                 />
                 <Text></Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handleTermos}>
                  <Image  
                     style={styles.checkbox}
-                    source={require('../../components/phone.png')}
+                    source={require('./surpreso.png')}
                 />
                 <Text></Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handleTermos}>
              <Image  
                     style={styles.checkbox}
-                    source={require('../../components/phone.png')}
+                    source={require('./triste.png')}
                 />
                 <Text></Text>
                 </TouchableOpacity>
