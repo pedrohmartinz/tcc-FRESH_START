@@ -1,9 +1,10 @@
-import React,{useState, useEffect, useState} from "react";
+import React,{useState, useEffect, useContext} from "react";
 import {Text, ImageBackground, TouchableOpacity, StyleSheet, View, Image, ScrollView} from 'react-native';
 import {Container, MyHeader, Pergunta, Pergunta2} from './styles.js';
 import { Pressable } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import database from "../../config/firebaseconfig"
+import { UserContext } from '../../contexts/UserContext';
 
 
 export default () => {
@@ -56,7 +57,7 @@ export default () => {
     }, [])
     var tupla2 = task2;
     var comp2 = task2.length;
-    var id2 = ""
+    var id2 = []
     var tupla = task;
     var comp = task.length;
     var prem1 = "0"
@@ -74,12 +75,15 @@ export default () => {
         }
     }
     for (var c = 0; c < comp2; c++) {
-        if (tupla[c]["email"] == user.name ) {
-            var id2 = tupla[c]["mensagensRespondidas"];
+        if (tupla2[c]["email"] == user.name ) {
+            var id2 = tupla2[c]["mensagensRespondidas"];
+           
             comp2 =c;
             
         }
     }
+    console.log(id2)
+    console.log(tupla2[c]["mensagensRespondidas"])
 
     return (
         <ScrollView>
@@ -129,10 +133,17 @@ export default () => {
         </View>
         
         </Pergunta2>
-       
+    
+        {( id2 == prem1 ) ? 
         <Pergunta onPress={handleQ1} >
-            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {( id2 == prem1 ) ? prem1 : <Text style={{color:'green'}} >Mensagem mais respondida</Text> } </Text>
+        <Text style={{fontSize:16, textAlign:'left', margin:10}} > Mensagem já respondida </Text>
+        </Pergunta>      
+            : 
+            <Pergunta onPress={handleQ1} >
+            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem1}  </Text>
         </Pergunta>
+        }
+     
         <Pergunta onPress={handleQ2}>
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem2} </Text>
         </Pergunta>

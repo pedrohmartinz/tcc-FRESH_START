@@ -1,11 +1,11 @@
-import React,{useState, useEffect, useState} from "react";
+import React,{useState, useEffect} from "react";
 import {Text, ImageBackground, TouchableOpacity, StyleSheet, View, Image, ScrollView} from 'react-native';
 import {Container, MyHeader, Pergunta, Pergunta2} from './styles.js';
 import { Pressable } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import database from "../../../config/firebaseconfig"
 import { TextInput } from "react-native-gesture-handler";
-import { UserContext } from '../../contexts/UserContext';
+import { UserContext } from '../../../contexts/UserContext';
 
 
 export default () => {
