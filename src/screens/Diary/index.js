@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useState} from "react";
 import {Text, ImageBackground, TouchableOpacity, StyleSheet, View, Image, ScrollView} from 'react-native';
 import {Container, MyHeader, Pergunta, Pergunta2} from './styles.js';
 import { Pressable } from "react-native";
@@ -14,6 +14,8 @@ export default () => {
     var weekdays = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"); 
     const navigation = useNavigation();
     const [task, setTask] = useState([]);
+    const [task2, setTask2] = useState([]);
+    const { state: user } = useContext(UserContext);
     
     const handleTermos = () =>{
         navigation.navigate('Q1')
@@ -42,7 +44,19 @@ export default () => {
             })
             setTask(list)
         })
+
+        database.collection("Usuario").onSnapshot((query) => {
+            const list2 = [];
+            query.forEach((doc) => {
+                    list2.push({ ...doc.data(), id: doc.id })
+            })
+            setTask2(list2)
+        })
+
     }, [])
+    var tupla2 = task2;
+    var comp2 = task2.length;
+    var id2 = ""
     var tupla = task;
     var comp = task.length;
     var prem1 = "0"
@@ -57,6 +71,13 @@ export default () => {
             var prem3 = tupla[c]["mensagem3"];
             var prem4 = tupla[c]["mensagem4"];
 
+        }
+    }
+    for (var c = 0; c < comp2; c++) {
+        if (tupla[c]["email"] == user.name ) {
+            var id2 = tupla[c]["mensagensRespondidas"];
+            comp2 =c;
+            
         }
     }
 
@@ -110,7 +131,7 @@ export default () => {
         </Pergunta2>
        
         <Pergunta onPress={handleQ1} >
-            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem1} </Text>
+            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {( id2 == prem1 ) ? prem1 : <Text style={{color:'green'}} >Mensagem mais respondida</Text> } </Text>
         </Pergunta>
         <Pergunta onPress={handleQ2}>
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem2} </Text>

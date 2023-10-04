@@ -48,7 +48,8 @@ export default () => {
                         name:nameField,
                         password:passwordField,
                         phone:telefoneField,
-                        dataI: dateShort
+                        dataI: dateShort,
+                        mensagensRespondidas:[]
                       })
                       user.name = emailField;
                       user.email=nameField;
