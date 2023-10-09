@@ -61,7 +61,7 @@ export default () => {
     }
     const resposta = () =>{
         database.collection("Usuario").add(id).update({
-            mensagensRespondidas:[`${prem1}`]
+            mensagensRespondidas: task2.push(prem1)
         })
     }
     return (

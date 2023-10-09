@@ -133,29 +133,48 @@ export default () => {
         </View>
         
         </Pergunta2>
-    
-        {( id2 == prem1 ) ? 
-        <Pergunta onPress={handleQ1} >
-        <Text style={{fontSize:16, textAlign:'left', margin:10}} > Mensagem já respondida </Text>
+        {/*Checkando se a mensagem 1 está respondida*/}
+        {( task2.find(prem1) ) ? 
+        <Pergunta style={{backgroundColor:"green"}} >
+        <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
             : 
             <Pergunta onPress={handleQ1} >
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem1}  </Text>
         </Pergunta>
         }
-     
-        <Pergunta onPress={handleQ2}>
-            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem2} </Text>
-        </Pergunta>
-        <Pergunta onPress={handleQ3}>
-            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem3} </Text>
-        </Pergunta>
-        <Pergunta onPress={handleQ4}>
-            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem4} </Text>
-        </Pergunta>
 
+         {/*Checkando se a mensagem 2 está respondida*/}
+         {( task2.find(prem2) ) ? 
+        <Pergunta style={{backgroundColor:"green"}} >
+        <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
+        </Pergunta>      
+            : 
+            <Pergunta onPress={handleQ2} >
+            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem2}  </Text>
+        </Pergunta>
+        }
 
-
+         {/*Checkando se a mensagem 3 está respondida*/}
+         {( task2.find(prem3) ) ? 
+        <Pergunta style={{backgroundColor:"green"}} >
+        <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
+        </Pergunta>      
+            : 
+            <Pergunta onPress={handleQ3} >
+            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem3}  </Text>
+        </Pergunta>
+        }
+         {/*Checkando se a mensagem 4 está respondida*/}
+         {( task2.find(prem4) ) ? 
+        <Pergunta style={{backgroundColor:"green"}} >
+        <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
+        </Pergunta>      
+            : 
+            <Pergunta onPress={handleQ4} >
+            <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem4}  </Text>
+        </Pergunta>
+        }
             </ImageBackground>
         </Container>
                     
