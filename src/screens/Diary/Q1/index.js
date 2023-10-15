@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useContext} from "react";
 import {Text, ImageBackground, TouchableOpacity, StyleSheet, View, Image, ScrollView} from 'react-native';
 import {Container, MyHeader, Pergunta, Pergunta2} from './styles.js';
 import { Pressable } from "react-native";
@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import database from "../../../config/firebaseconfig"
 import { TextInput } from "react-native-gesture-handler";
 import { UserContext } from '../../../contexts/UserContext';
+
 
 
 export default () => {
@@ -52,18 +53,26 @@ export default () => {
 
         }
     }
-    for (var c = 0; c < comp2; c++) {
-        if (tupla[c]["email"] == user.name ) {
-            var id2 = tupla[c]["mensagensRespondidas"];
-            comp2 =c;
+  
+    for (var c2 = 0; c2 < comp2; c2++) {
+        if (tupla2[c2]["email"] == user.name ) {
+            var id2 = tupla2[c2]["mensagensRespondidas"];
+            var identificador = tupla2[c2]["id"]
+            
+            comp2 =c2;
+           
             
         }
     }
-    const resposta = () =>{
-        database.collection("Usuario").add(id).update({
-            mensagensRespondidas: task2.push(prem1)
-        })
+    
+   console.log(id2.concat(prem1))
+    const handleQ4 = () =>{
+       
+       database.collection("Usuario").doc(identificador).update({mensagensRespondidas: id2.concat(prem1)})
+        navigation.navigate('Diary')
     }
+    
+    
     return (
    
         <ImageBackground
@@ -73,7 +82,7 @@ export default () => {
         <Container>
                  <ScrollView>
         
-                <TouchableOpacity style={{marginTop:50, marginBottom:-60, alignItems:"flex-end", marginRight:30 }} onPress={resposta} ><Text style={{fontSize:18}} >Salvar</Text></TouchableOpacity>
+                <TouchableOpacity style={{marginTop:50, marginBottom:-60, alignItems:"flex-end", marginRight:30 }} onPress={handleQ4} ><Text style={{fontSize:18}} >Salvar</Text></TouchableOpacity>
              <MyHeader>
             <Text style={{fontSize:20, marginLeft:5, marginTop:20, textAlign:'left', fontWeight:"bold", textAlign:"center"}} >{prem1} </Text>
             <TextInput  value={message} onChangeText={t => setMessage(t)} multiline placeholder="Escreva aqui como foi seu dia, o que está sentindo, suas vontades..." style={{marginTop:-20, marginLeft:15, marginRight:15, fontSize:20, height:200}} />

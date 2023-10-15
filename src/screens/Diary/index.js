@@ -74,17 +74,17 @@ export default () => {
 
         }
     }
-    for (var c = 0; c < comp2; c++) {
-        if (tupla2[c]["email"] == user.name ) {
-            var id2 = tupla2[c]["mensagensRespondidas"];
+    for (var c2 = 0; c2 < comp2; c2++) {
+        if (tupla2[c2]["email"] == user.name ) {
+            var id2 = tupla2[c2]["mensagensRespondidas"];
            
-            comp2 =c;
+            comp2 =c2;
             
         }
     }
-    console.log(id2)
-    console.log(tupla2[c]["mensagensRespondidas"])
-
+    
+   
+  
     return (
         <ScrollView>
 
@@ -133,8 +133,10 @@ export default () => {
         </View>
         
         </Pergunta2>
-        {/*Checkando se a mensagem 1 está respondida*/}
-        {( task2.find(prem1) ) ? 
+        {/*Checkando se a mensagem 1 está respondida*/
+      
+        }
+        {( id2.includes(prem1) == true ) ? 
         <Pergunta style={{backgroundColor:"green"}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
@@ -143,9 +145,8 @@ export default () => {
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem1}  </Text>
         </Pergunta>
         }
-
-         {/*Checkando se a mensagem 2 está respondida*/}
-         {( task2.find(prem2) ) ? 
+        {/*Checkando se a mensagem 2 está respondida*/}
+        {( id2.includes(prem2) == true ) ? 
         <Pergunta style={{backgroundColor:"green"}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
@@ -156,7 +157,7 @@ export default () => {
         }
 
          {/*Checkando se a mensagem 3 está respondida*/}
-         {( task2.find(prem3) ) ? 
+         {( id2.includes(prem3) == true ) ? 
         <Pergunta style={{backgroundColor:"green"}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
@@ -166,7 +167,7 @@ export default () => {
         </Pergunta>
         }
          {/*Checkando se a mensagem 4 está respondida*/}
-         {( task2.find(prem4) ) ? 
+         {( id2.includes(prem4) == true ) ? 
         <Pergunta style={{backgroundColor:"green"}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
