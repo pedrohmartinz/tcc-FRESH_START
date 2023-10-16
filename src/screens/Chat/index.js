@@ -4,15 +4,18 @@ import {Container, Comentario, Usuario, Conteudo} from './styles.js';
 import { UserContext } from '../../contexts/UserContext';
 import database from "../../config/firebaseconfig"
 import { FlatList } from "react-native-gesture-handler";
+import Filter from 'bad-words';
 
 export default () => {
     const { state: user } = useContext(UserContext);
+    const [filteredMessage, setFilteredMessage] = useState('');
     const [message, setMessage] = useState('')
     const KEYBOARD_AVOIDING_BEHAVIOR = Platform.select({
         ios: 'padding',
         android: 'height',
     });
     const hoje = new Date()
+    const filter = new Filter();
     if(hoje.getHours() <12){
         var texto="Bom dia"
     }
@@ -23,8 +26,9 @@ export default () => {
         var texto="Boa noite"
     }
     const handleSignClick = async () =>{
-
-      if(message == "porra" || message== "caralho" || message == "drogados"){
+          const filtered = filter.clean(message); // Filtrar palavrões
+          setFilteredMessage(filtered);
+      if(filtered !== message){
         Alert.alert('Ops....', 'O conteúdo da mensagem parece inapropriado, revise o texto.', [
           {
             text: 'Cancel',
