@@ -28,7 +28,7 @@ export default () => {
     const handleSignClick = async () =>{
           const filtered = filter.clean(message); // Filtrar palavrões
           setFilteredMessage(filtered);
-      if(filtered !== message){
+      if(filtered !== message || message=="porra" || message=="Cacete" || message=="cacete" || message=="Caralho" || message=="caralho" || message=="Buceta" || message=="buceta" || message=="Filho da puta" || message=="filho da puta" || message=="Vai se foder"|| message=="vai se foder"|| message=="drogado" || message=="Drogado"|| message=="Desgraçado" || message=="desgraçado"|| message=="Gay"|| message=="gay" || message=="Viado"|| message=="viado"){
         Alert.alert('Ops....', 'O conteúdo da mensagem parece inapropriado, revise o texto.', [
           {
             text: 'Cancel',

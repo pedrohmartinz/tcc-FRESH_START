@@ -12,7 +12,7 @@ border-radius:20px;
     margin-bottom:40px;
     margin-top:10px;
     margin-left:10px;
-    border-color: '#000000';
+    border-color: #000000;
     border-width: 1px;
 
 `;
