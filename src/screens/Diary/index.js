@@ -79,7 +79,7 @@ export default () => {
     }
     for (var c2 = 0; c2 < comp2; c2++) {
         if (tupla2[c2]["email"] == user.name ) {
-            var id2 = tupla2[c2]["mensagensRespondidas"];
+            var id2 = tupla2[c2]["notas"];
            
             comp2 =c2;
             

@@ -67,7 +67,7 @@ export default () => {
     
     const handleQ4 = () =>{
        
-       database.collection("Usuario").doc(identificador).update({mensagensRespondidas: id2.concat(prem1)})
+       database.collection("Usuario").doc(identificador).update({notas: id2.concat(message)})
         navigation.navigate('Diary')
     }
     
