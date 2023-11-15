@@ -82,6 +82,28 @@ export default () => {
             
         }
     }
+    const [backgroundColor, setBackgroundColor] = useState('white');
+    const changeBackgroundColor = () => {
+        // Lógica para alterar a cor de fundo (por exemplo, alternar entre vermelho e verde)
+        const newColor = backgroundColor === '#1EEBB8B0' ? 'lightgreen' : '#1EEBB8B0';
+        
+        // Atualizar o estado com a nova cor de fundo
+        setBackgroundColor(newColor);
+      };
+      const changeBackgroundColor2 = () => {
+        // Lógica para alterar a cor de fundo (por exemplo, alternar entre vermelho e verde)
+        const newColor = backgroundColor === '#1EEBB8B0' ? '#EBD400' : '#1EEBB8B0';
+        
+        // Atualizar o estado com a nova cor de fundo
+        setBackgroundColor(newColor);
+      };
+      const changeBackgroundColor3 = () => {
+        // Lógica para alterar a cor de fundo (por exemplo, alternar entre vermelho e verde)
+        const newColor = backgroundColor === '#1EEBB8B0' ? '#BE4D00' : '#1EEBB8B0';
+        
+        // Atualizar o estado com a nova cor de fundo
+        setBackgroundColor(newColor);
+      };
     
    
   
@@ -99,31 +121,31 @@ export default () => {
             <TouchableOpacity style={{marginTop:10  , backgroundColor:'#1EEBB8B0', width:'90%', textAlign:'center', alignItems:'center', borderRadius:15, marginLeft:'5%' }} >
             <Text style={{fontSize:20, margin:10, color:'#103F18'}}  >Adicionar nota diária</Text>
             </TouchableOpacity>
-            <Text style={{   textDecorationLine: 'underline',fontSize:14, marginTop:3, textAlign:'left', color:'#AFAFAF', width:'32%', marginLeft:'34%' }} >ver todas as notas </Text>
+            <Text onPress={handleQ5} style={{   textDecorationLine: 'underline',fontSize:14, marginTop:3, textAlign:'left', color:'#AFAFAF', width:'32%', marginLeft:'34%' }} >ver todas as notas </Text>
              
         </MyHeader>
 
         
 
         <Text style={{fontSize:16, margin:10, color:'#103F18', fontWeight:'bold', width:'36%', marginLeft:'32%'}}  >Perguntas Diárias</Text>
-        <Pergunta2 style={{backgroundColor:"#1EEBB8B0"}}  >
+        <Pergunta2 style={{backgroundColor}}  >
             <Text style={{fontSize:16, textAlign:'left', margin:10,color:'white', marginTop:22}} > Como vai o dia hoje? </Text>
             <View style={styles.checkboxContainer}>
-                <TouchableOpacity onPress={handleTermos}>
+                <TouchableOpacity onPress={changeBackgroundColor}>
              <Image  
                     style={styles.checkbox}
                     source={require('./feliz.png')}
                 />
                 <Text></Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleTermos}>
+                <TouchableOpacity onPress={changeBackgroundColor2}>
                  <Image  
                     style={styles.checkbox}
                     source={require('./surpreso.png')}
                 />
                 <Text></Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleTermos}>
+                <TouchableOpacity onPress={changeBackgroundColor3}>
              <Image  
                     style={styles.checkbox}
                     source={require('./triste.png')}
