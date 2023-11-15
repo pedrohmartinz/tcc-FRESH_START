@@ -37,6 +37,9 @@ export default () => {
     const handleQ5 = () =>{
         navigation.navigate('Q5')
     }
+    const handleNotas = () =>{
+        navigation.navigate('Notas')
+    }
     useEffect(() => {
         database.collection("Perguntas").onSnapshot((query) => {
             const list = [];
@@ -118,7 +121,7 @@ export default () => {
             >
          <MyHeader>
             <Text style={{fontSize:22, marginLeft:5, marginTop:50, textAlign:'left', fontWeight:"bold"}} >{weekdays[diaSemanaAtual]}: {day}/{month} </Text>
-            <TouchableOpacity style={{marginTop:10  , backgroundColor:'#1EEBB8B0', width:'90%', textAlign:'center', alignItems:'center', borderRadius:15, marginLeft:'5%' }} >
+            <TouchableOpacity onPress={handleNotas} style={{marginTop:10  , backgroundColor:'#1EEBB8B0', width:'90%', textAlign:'center', alignItems:'center', borderRadius:15, marginLeft:'5%' }} >
             <Text style={{fontSize:20, margin:10, color:'#103F18'}}  >Adicionar nota diária</Text>
             </TouchableOpacity>
             <Text onPress={handleQ5} style={{   textDecorationLine: 'underline',fontSize:14, marginTop:3, textAlign:'left', color:'#AFAFAF', width:'32%', marginLeft:'34%' }} >ver todas as notas </Text>

@@ -14,6 +14,7 @@ import Q2 from "../screens/Diary/Q2";
 import Q3 from "../screens/Diary/Q3";
 import Q4 from "../screens/Diary/Q4";
 import Q5 from "../screens/Diary/Q5";
+import Notas from "../screens/Diary/Notas";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +32,7 @@ export default () =>(
         <Tab.Screen name="Q3" component={Q3} />
         <Tab.Screen name="Q4" component={Q4} />
         <Tab.Screen name="Q5" component={Q5} />
+        <Tab.Screen name="Notas" component={Notas} />
         <Tab.Screen name="Calendar" component={Calendar} />
         
 
