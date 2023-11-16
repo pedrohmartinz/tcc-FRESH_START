@@ -80,7 +80,7 @@ export default () => {
                  <ScrollView>
         
             <Text style={{fontSize:35, marginLeft:5, marginTop:100, textAlign:'left', fontWeight:"bold", textAlign:"center"}} >Minhas Notas </Text>
-         {(isEmpty == true) ? <Text style={{textAlign:"center", marginTop:20}} >Ops... parece que você ainda não tem notas</Text> : {id2}}
+         {(isEmpty == true) ? <Text style={{textAlign:"center", marginTop:20}} >Ops... parece que você ainda não tem notas</Text> : <Text>Nota dia 21/11 </Text>}
        
             
      

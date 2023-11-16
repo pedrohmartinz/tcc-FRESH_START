@@ -85,7 +85,7 @@ export default () => {
             
         }
     }
-    const [backgroundColor, setBackgroundColor] = useState('white');
+    const [backgroundColor, setBackgroundColor] = useState('#1EEBB8B0');
     const changeBackgroundColor = () => {
         // Lógica para alterar a cor de fundo (por exemplo, alternar entre vermelho e verde)
         const newColor = backgroundColor === '#1EEBB8B0' ? 'lightgreen' : '#1EEBB8B0';
