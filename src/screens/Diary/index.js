@@ -79,7 +79,7 @@ export default () => {
     }
     for (var c2 = 0; c2 < comp2; c2++) {
         if (tupla2[c2]["email"] == user.name ) {
-            var id2 = tupla2[c2]["notas"];
+            var id2 = tupla2[c2]["mensagensRespondidas"];
            
             comp2 =c2;
             
@@ -108,7 +108,7 @@ export default () => {
         setBackgroundColor(newColor);
       };
     
-   
+   console.log(id2)
   
     return (
         <ScrollView>
@@ -162,7 +162,7 @@ export default () => {
       
         }
         {( id2.includes(prem1) == true ) ? 
-        <Pergunta style={{backgroundColor:"green"}} >
+        <Pergunta style={{backgroundColor:"#1E99EB",opacity:0.8}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
             : 
@@ -172,7 +172,7 @@ export default () => {
         }
         {/*Checkando se a mensagem 2 está respondida*/}
         {( id2.includes(prem2) == true ) ? 
-        <Pergunta style={{backgroundColor:"green"}} >
+        <Pergunta style={{backgroundColor:"#1E99EB",opacity:0.8}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
             : 
@@ -183,7 +183,7 @@ export default () => {
 
          {/*Checkando se a mensagem 3 está respondida*/}
          {( id2.includes(prem3) == true ) ? 
-        <Pergunta style={{backgroundColor:"green"}} >
+        <Pergunta style={{backgroundColor:"#1E99EB",opacity:0.8}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
             : 
@@ -193,11 +193,11 @@ export default () => {
         }
          {/*Checkando se a mensagem 4 está respondida*/}
          {( id2.includes(prem4) == true ) ? 
-        <Pergunta style={{backgroundColor:"green"}} >
+        <Pergunta style={{backgroundColor:"#1E99EB",opacity:0.8}} >
         <Text style={{fontSize:16, textAlign:'left', margin:10, color:"white"}} > Mensagem já respondida </Text>
         </Pergunta>      
             : 
-            <Pergunta onPress={handleQ4} >
+            <Pergunta onPress={handleQ4} style={{marginBottom:60}} >
             <Text style={{fontSize:16, textAlign:'left', margin:10}} > {prem4}  </Text>
         </Pergunta>
         }

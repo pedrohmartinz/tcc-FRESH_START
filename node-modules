@@ -12,5 +12,11 @@ npm install @react-native-async-storage/async-storage
 npm install expo-checkbox
 npm install firebase
 npm install @expo/html-elements
+npm install react-router-dom
+npm install expo-sharing
+npm install react-native-calendars
+npm install react-native-youtube-iframe
+npm install react-native-webview
+npm install bad-words
 
 

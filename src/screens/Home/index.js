@@ -48,8 +48,13 @@ export default () => {
     }
       var u = formatDate(today, 'aaaa-mm-dd');
 
-      const diffInMs   = new Date(u) - new Date(prem1)
+
+      var v = prem1.slice(0,4)+'-'+prem1.slice(5,7)+'-'+prem1.slice(8)
+      
+      const diffInMs   = new Date(u) - new Date(v)
       const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+      console.log(diffInDays)
+
       const calendargo = () =>{
         navigation.navigate('Calendar')
       }
@@ -73,7 +78,7 @@ export default () => {
                
 
                 <Text style={{fontSize:22, marginTop:-12, textAlign:'center'}} >Estou sóbrio(a) há:</Text>
-                <Text style={{fontSize:56, marginTop:1, textAlign:'center', fontWeight: "bold"}} >0 </Text> 
+                <Text style={{fontSize:56, marginTop:1, textAlign:'center', fontWeight: "bold", marginLeft:20}} >{diffInDays} </Text> 
                 <Text style={{fontSize:19, marginTop:-1, textAlign:'center'}} >dias</Text> 
                 <Text style={{fontSize:14, marginTop:-1, marginLeft:18, color:"gray"}} >inicio: {prem1} </Text> 
 

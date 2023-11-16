@@ -66,12 +66,12 @@ export default () => {
         style={{height:'100%', width:'100%'}}
         source={require('../Home/background1.png')}
     >
-        <Text style={{fontSize:32, width:'51%', marginLeft:'23.5%', fontWeight:"bold", marginTop:30}} >Informações</Text>
+        <Text style={{fontSize:32, width:'51%', marginLeft:'27.5%', fontWeight:"bold", marginTop:30}} >Informações</Text>
 
        <Text style={{fontSize:32, width:'30%', marginLeft:'39%', marginTop:30}} >Sobre</Text>
         <Text style={{justifyContent:"center", textAlign:"center"}} >Esta é uma tela para aprendizado e autoconhecimento. Aproveite para ler livros, assistir a vídeos interessantes e praticas técnicas de meditação...</Text>
        
-        <View style={{backgroundColor:'white', borderRadius:30, marginTop:30}} >
+        <View style={{backgroundColor:'white', borderRadius:30, marginTop:30, opacity:0.9}} >
      
        <Text style={{fontSize:32, width:'30%', marginLeft:'39%'}} >Livros</Text>
        <View style={{width:'100%', alignItems:"center"}} >
@@ -103,7 +103,7 @@ export default () => {
                 videoId={'84WIaK3bl_s'}
               />
             </View>
-            <Text style={{fontSize:15, color:'gray', textDecorationLine:"underline", width:'32%', marginLeft:'44%', marginTop:-115, marginBottom:20}} >ver mais</Text>  
+            <Text style={{fontSize:15, color:'gray', textDecorationLine:"underline", width:'32%', marginLeft:'44%', marginTop:-95, marginBottom:40}} >ver mais</Text>  
                     
       
         </ImageBackground>
